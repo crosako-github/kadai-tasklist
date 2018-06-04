@@ -24,8 +24,9 @@
         </table>
 <br>
 <br>
-    {!! link_to_route('tasklists.create', '新規タスクの登録はこちら') !!}
 
     @endif
+
+    {!! link_to_route('tasklists.create', '新規タスクの登録はこちら') !!}
 
 @endsection
