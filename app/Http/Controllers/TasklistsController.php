@@ -44,10 +44,13 @@ class TasklistsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, ['task' => 'required|max:191']);
+        $this->validate($request, ['status' => 'required']);
+        
         $tasklist = new Tasklist;
         $tasklist->task = $request->task;
         $tasklist->deadline = $request->deadline;
-        $tasklist->compcheck = '0';
+        $tasklist->status = $request->status;
         $tasklist->save();
 
         return redirect('/');
@@ -92,10 +95,13 @@ class TasklistsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, ['task' => 'required|max:191']);
+        $this->validate($request, ['status' => 'required']);
+        
         $tasklist = Tasklist::find($id);
         $tasklist->task = $request->task;
         $tasklist->deadline = $request->deadline;
-        $tasklist->compcheck = '0';    
+        $tasklist->status = $request->status;    
         $tasklist->save();
 
         return redirect('/');

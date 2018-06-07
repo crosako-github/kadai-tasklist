@@ -6,6 +6,7 @@
 
     <p><font size="7">{{ $tasklist->task }}</font></p>
     <p><font size="5">期限 ： {{ $tasklist->deadline }} </font></p>
+    <p><font size="5">現在の状況 ： {{ $tasklist->status }} </font></p>
     
      {!! link_to_route('tasklists.edit', 'このタスクを編集', ['id' => $tasklist->id]) !!}
     <br>
