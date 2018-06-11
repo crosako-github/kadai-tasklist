@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="row">
-    <div class="col-xs-6">
+    <div class="col-sm-offset-2 col-sm-8">
+    <div class="col-md-offset-2 col-md-8">
+    <div class="col-lg-offset-3 col-lg-6">
         <h1>【ID:{{ $tasklist->id }}】タスク編集ページ</h1>
 
             {!! Form::model($tasklist, ['route' => ['tasklists.update', $tasklist->id], 'method' => 'put']) !!}
@@ -29,6 +31,8 @@
                 {!! Form::submit('更新', ['class' => 'btn btn-default']) !!}
         
             {!! Form::close() !!}
+    </div>
+    </div>
     </div>
 </div>
 @endsection
